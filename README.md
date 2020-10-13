@@ -1,60 +1,43 @@
-# Laravel 7.0+ Frontend preset for Tailwind CSS
+# Vue Frontend Preset for Laravel Shopify
 
-A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
+A Vue front-end scaffolding preset for [Laravel Shopify](https://github.com/osiset/laravel-shopify).
 
 ## Usage
 
-1. Fresh install Laravel >= 7.0 and `cd` to your app.
-2. Install this preset via `composer require laravel-frontend-presets/tailwindcss --dev`. Laravel will automatically discover this package. No need to register the service provider.
+1. Fresh install Laravel Shopify >= 14.0 on Laravel >= 8.0 and `cd` to your app.
+2. Install this preset via `composer require UnicornGlobal/laravel-shopify-vue --dev`. Laravel will automatically discover this package. No need to register the service provider.
 
-### a. For Presets without Authentication
+### Install the Preset
 
-1. Use `php artisan ui tailwindcss` for the basic Tailwind CSS preset
+1. Use `php artisan ui laravel-shopify-vue` for the preset
 2. `npm install && npm run dev`
 3. `php artisan serve` (or equivalent) to run server and test preset.
 
-### b. For Presets with Authentication
+### Setup
 
-1. Use `php artisan ui tailwindcss --auth` for the basic preset, auth route entry, and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
-4. `npm install && npm run dev`
-5. Configure your favorite database (mysql, sqlite etc.)
-6. `php artisan migrate` to create basic user tables.
-7. `php artisan serve` (or equivalent) to run server and test preset.
+Add a `MIX_SHOPIFY_APP_STORE_PAGE` env variable pointing to your app
+store listing. This is where users who load the app directly into their
+URL bar get sent to install the application.
 
-### Config
+Update `resources/js/config.js` with the name of your application.
 
-The default `tailwind.config.js` configuration file included by this package simply uses the config from the Tailwind vendor files. Should you wish to make changes, you should remove the file and run `node_modules/.bin/tailwind init`, which will generate a fresh configuration file for you, which you are free to change to suit your needs.
+### Usage
 
-Add a new i18n string in the `resources/lang/XX/pagination.php` file for each language that your app uses:
-```php
-'previous' => '&laquo; Previous',
-'next' => 'Next &raquo;',
-'goto_page' => 'Goto page #:page', // Add this line
-```
-This should help with accessibility
-```html
-<li>
-    <a href="URL?page=2" class="..."
-       aria-label="Goto page #2"
-    >
-        2
-    </a>
-</li>
-```
+You can make API endpoints in the new ApiController.
 
-#### Pagination
-Laravel now supports Tailwind CSS pagination directly. If you would like to use these views in your app, you can refer to [docs](https://laravel.com/docs/master/pagination#using-tailwind).
+See the files in the `resources/js` folder for more info.
 
-### Screenshots
+### Actions
 
-![Welcome](/screenshots/welcome.png)
+There is basic support for some actions. They will be available on
+`this.$actions` or `Vue.prototype.$actions`.
 
-![Register](/screenshots/register.png)
+Not all actions are included. Other examples exist in `pages/Example.vue`.
 
-![Login](/screenshots/login.png)
+### Polaris Components
 
-![Reset Password](/screenshots/reset-password.png)
+This installs a custom fork of `@eastsideco/polaris-vue`
 
-![Dashboard](/screenshots/dashboard.png)
+## Warning
 
-![Verify](/screenshots/verify.png)
+This is only a proof of concept and should not be used in production.
