@@ -1,0 +1,19 @@
+<?php
+
+namespace {{namespace}}Http\Controllers;
+
+use Illuminate\Http\Request;
+use Osiset\ShopifyApp\Http\Controllers\ApiController as BaseApiController
+
+class ApiController extends BaseApiController
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth.token');
+    }
+}

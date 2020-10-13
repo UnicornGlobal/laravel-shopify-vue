@@ -1,10 +1,11 @@
 {
-  "name": "laravel-frontend-presets/tailwindcss",
-  "description": "Laravel frontend preset for Tailwind CSS",
+  "name": "UnicornGlobal/laravel-shopify-vue",
+  "description": "Vue frontend preset for Laravel Shopify",
   "keywords": [
     "laravel",
+    "shopify",
     "preset",
-    "tailwindcss"
+    "vue"
   ],
   "license": "MIT",
   "require": {
@@ -13,13 +14,13 @@
   },
   "autoload": {
     "psr-4": {
-      "LaravelFrontendPresets\\TailwindCssPreset\\": "src/"
+      "UnicornGlobal\\LaravelShopifyVuePreset\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "LaravelFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
+        "UnicornGlobal\\LaravelShopifyVuePreset\\LaravelShopifyVuePresetServiceProvider"
       ]
     }
   }
