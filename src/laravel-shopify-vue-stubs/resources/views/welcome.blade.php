@@ -5,7 +5,7 @@
         <title>{{ config('shopify-app.app_name') }}</title>
 
         @yield('styles')
-        <script src="http://localhost:8098"></script>
+        <!-- <script src="http://localhost:8098"></script> -->
     </head>
 
     <body>
